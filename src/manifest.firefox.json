@@ -1,0 +1,30 @@
+{
+	"manifest_version": 3,
+	"name": "leet2hub",
+	"version": "0.1.0",
+	"description": "A browser extension that uploads LeetCode submissions to GitHub.",
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "leet2hub@iShibi",
+			"data_collection_permissions": {
+				"required": ["none"]
+			}
+		}
+	},
+	"action": {
+		"default_popup": "src/popup/popup.html"
+	},
+	"options_page": "src/options/options.html",
+	"permissions": ["webRequest", "storage", "tabs"],
+	"host_permissions": ["https://leetcode.com/*"],
+	"background": {
+		"type": "module",
+		"scripts": ["ServiceWorker.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://leetcode.com/*"],
+			"js": ["Content.js"]
+		}
+	]
+}

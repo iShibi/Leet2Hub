@@ -1,29 +1,31 @@
 {
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.detectIndentation": true,
+	"editor.formatOnSave": true,
+	"editor.insertSpaces": false,
+	"editor.tabSize": 2,
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"javascript.preferences.quoteStyle": "single",
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"typescript.preferences.quoteStyle": "single",
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+	"editor.codeActionsOnSave": {
+		"source.action.useSortedKeys.biome": "explicit",
+		"source.fixAll.biome": "explicit",
+		"source.organizeImports.biome": "explicit"
+	},
 	"editor.quickSuggestions": {
 		"strings": true
 	},
-	// "typescript.preferences.quoteStyle": "single",
-	"javascript.preferences.quoteStyle": "single",
-	"files.eol": "\n",
-	"editor.tabSize": 2,
-	"editor.insertSpaces": false,
-	"editor.detectIndentation": false,
-	"files.insertFinalNewline": true,
-	"editor.codeActionsOnSave": {
-		"source.fixAll": "always",
-		"source.organizeImports": "always"
-	},
-	"editor.formatOnSave": true,
-	"typescript.tsdk": "node_modules\\typescript\\lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
 	"json.schemas": [
 		{
-			"fileMatch": ["manifest.json"],
+			"fileMatch": ["manifest.chrome.json"],
 			"url": "https://json.schemastore.org/chrome-manifest.json"
+		},
+		{
+			"fileMatch": ["manifest.firefox.json"],
+			"url": "https://www.schemastore.org/webextension.json"
 		}
-	],
-	"eslint.useFlatConfig": true
+	]
 }

@@ -1,4 +1,4 @@
-console.log('[Content] Leet2Hub Chrome Extension.');
+console.log('[Content] Leet2Hub Browser Extension.');
 
 const observerForAcceptedSubmmission = new MutationObserver(() => {
 	const result = document.querySelector("[data-e2e-locator='submission-result']");

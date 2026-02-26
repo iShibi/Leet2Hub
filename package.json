@@ -9,23 +9,29 @@
 		"url": "https://github.com/iShibi"
 	},
 	"scripts": {
-		"clean-dist": "zx ./scripts/delete.mjs",
-		"compile-tw": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
-		"compile-src": "tsc",
-		"copy-static": "zx ./scripts/copy.mjs",
-		"build": "npm run clean-dist && npm run compile-tw && npm run compile-src && npm run copy-static"
+		"prepare": "lefthook install",
+		"build:firefox": "tsc -b && vite build --config vite.config.firefox.ts",
+		"build:chrome": "tsc -b && vite build --config vite.config.chrome.ts",
+		"build:all": "npm run build:firefox && npm run build:chrome",
+		"lint:check": "biome lint",
+		"lint:write": "biome lint --write",
+		"format:check": "biome format",
+		"format:write": "biome format --write"
+	},
+	"dependencies": {
+		"@preact/signals": "^2.8.1",
+		"preact": "^10.28.3"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.10.0",
-		"@types/chrome": "^0.0.270",
-		"eslint": "^9.10.0",
-		"eslint-config-prettier": "^9.1.0",
-		"globals": "^15.9.0",
-		"prettier": "3.3.3",
-		"tailwindcss": "^3.4.10",
-		"typescript": "^5.5.4",
-		"typescript-eslint": "^8.4.0",
-		"zx": "^8.1.5"
+		"@biomejs/biome": "2.4.2",
+		"@preact/preset-vite": "^2.10.3",
+		"@tailwindcss/vite": "^4.1.18",
+		"@types/chrome": "^0.1.36",
+		"@types/node": "^24.10.1",
+		"lefthook": "^2.1.1",
+		"tailwindcss": "^4.1.18",
+		"typescript": "^5.9.3",
+		"vite": "^7.2.4"
 	},
 	"type": "module",
 	"license": "MIT"
