@@ -20,18 +20,18 @@
 	},
 	"dependencies": {
 		"@preact/signals": "^2.8.1",
-		"preact": "^10.28.3"
+		"preact": "^10.28.4"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.2",
+		"@biomejs/biome": "2.4.4",
 		"@preact/preset-vite": "^2.10.3",
-		"@tailwindcss/vite": "^4.1.18",
-		"@types/chrome": "^0.1.36",
+		"@tailwindcss/vite": "^4.2.1",
+		"@types/chrome": "^0.1.37",
 		"@types/node": "^24.10.1",
 		"lefthook": "^2.1.1",
-		"tailwindcss": "^4.1.18",
+		"tailwindcss": "^4.2.1",
 		"typescript": "^5.9.3",
-		"vite": "^7.2.4"
+		"vite": "^7.3.1"
 	},
 	"type": "module",
 	"license": "MIT"
