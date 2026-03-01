@@ -1,0 +1,50 @@
+name: Release
+
+permissions:
+  contents: write
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build all targets
+        run: npm run build:all
+
+      - name: Package release assets
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/}"
+
+          cd dist/chrome
+          zip -r "../Leet2Hub-${VERSION}-chrome.zip" .
+
+          zip -r "../Leet2Hub-${VERSION}-edge.zip" .
+
+          cd ../firefox
+          zip -r "../Leet2Hub-${VERSION}-firefox.zip" .
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/Leet2Hub-*-chrome.zip
+            dist/Leet2Hub-*-edge.zip
+            dist/Leet2Hub-*-firefox.zip
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
