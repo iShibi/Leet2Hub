@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"name": "leet2hub",
+	"name": "Leet2Hub",
 	"version": "0.1.0",
 	"description": "A browser extension that uploads LeetCode submissions to GitHub.",
 	"action": {

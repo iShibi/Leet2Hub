@@ -9,7 +9,7 @@ A browser extension that uploads LeetCode submissions to GitHub.
 
    "Contents" repository permissions (read/write)
 
-3. Download the extension from [Releases](https://github.com/iShibi/leet2hub/releases).
+3. Download the extension from [Releases](https://github.com/iShibi/Leet2Hub/releases).
 4. Unzip the extension and load it on the browser.
 5. Go to extension options page to add Github PAT and repository link.
 6. THAT'S IT!
